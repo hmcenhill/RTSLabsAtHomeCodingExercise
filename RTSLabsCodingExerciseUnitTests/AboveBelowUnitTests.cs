@@ -28,7 +28,7 @@ namespace RTSLabsCodingExercise.UnitTests
                     ["below"] = 4
                 }
             },
-            // Values Neither above or below but counted below
+            // Values Neither above or below
             {
                 new List<int>{5, 5, 5, 5, 5 },
                 5,
@@ -82,7 +82,25 @@ namespace RTSLabsCodingExercise.UnitTests
                     ["below"] = 0
                 }
             },
-
+            // Missing key, even when 0
+            {
+                new List<int>{1, 5, 2, 1, 10 },
+                0,
+                new Dictionary<string, int>
+                {
+                    ["above"] = 5,
+                }
+            },
+            // Key typo
+            {
+                new List<int>{1, 5, 2, 1, 10 },
+                0,
+                new Dictionary<string, int>
+                {
+                    ["Above"] = 5,
+                    ["below"] = 0
+                }
+            },
         };
     }
 }
